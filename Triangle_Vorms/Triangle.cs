@@ -8,46 +8,64 @@ namespace Triangle
 {
     class Triangle
     {
-        public double a;
-        public double b;
-        public double c;
-        public Triangle(double A, double B, double C)
+        //поля
+        public double a;//первая сторона
+        public double b;//вторая высота
+        public double c;//третья сторона
+        public double h;//высота
+
+        //методы
+        public Triangle(double A, double B, double C, double H)//конструктор
         {
-            a = A;
+            a = A;//создаем с заданными длинами сторон согласно заданию
             b = B;
             c = C;
+            h = H; //заданая высота
         }
 
-        public string outputA()
+        public string outputA()//выводим сторону а, метод возвращает строковое значение
         {
-            return Convert.ToString(a);
+            return Convert.ToString(a);//ссылка на внутреннее поле объекта класса
         }
 
         public string outputB()
         {
-            return Convert.ToString(b);
+            return Convert.ToString(b);//выводим сторону b
         }
         public string outputC()
         {
-            return Convert.ToString(c);
+            return Convert.ToString(c);// выводим сторону c
         }
 
-        public double Perimetr()
+        public string outputH()
         {
-            double p = 0;
-            p = a + b + c;
-            return p;
+            return Convert.ToString(h);//выводим высоту
         }
 
-        public double Surface()
+        public double Perimetr()//сумма всех сторон типа double 
         {
-            double s = 0;
             double p = 0;
-            p = (a + b + c) / 2;
-            s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
-            return s;
+            p = a + b + c;//вычисление 
+            return p;//возврат
         }
-        public double GetSetA 
+
+        public double Surface()//анологично периметру
+        {
+            double h = 0;
+            double p = 0;
+            p = (a + b + c) / 2;//полупериметр
+            h = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));//высота
+            return h;
+        }
+
+        public double Area() // нахождение площади
+        {
+            double S = 0;
+            S = 1 / 2 * b * h;//вычисление
+            return S;//возврат
+        }
+        //свойства
+        public double GetSetA //свойство позволяет установить/заменить значение стороны С
         {
             get 
             { return a; }
@@ -68,11 +86,20 @@ namespace Triangle
             set
             { c = value; }
         }
-        public bool ExistTriangle 
+
+        public double GetSetH
+        {
+            get
+            { return h; }
+            set
+            {
+                h = value; }
+        }
+        public bool ExistTriangle //свойсто устанавливает, существует треугольник с заданными сторонами или нет
         {
             get
             {
-                if ((a > b + c) && (b > a + c) && (c > a + b)) 
+                if ((a > b + c) && (b > a + c) && (c > a + b)) //сумма 2 сторон должна быть больше третьей стороны
                     return false;
                 else return true;
             }

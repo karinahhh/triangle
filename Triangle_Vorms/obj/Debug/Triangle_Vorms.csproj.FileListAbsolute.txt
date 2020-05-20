@@ -1,0 +1,10 @@
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\bin\Debug\Triangle_Vorms.exe.config
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\bin\Debug\Triangle_Vorms.exe
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\bin\Debug\Triangle_Vorms.pdb
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\obj\Debug\Triangle_Vorms.csprojAssemblyReference.cache
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\obj\Debug\Triangle_Vorms.Form1.resources
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\obj\Debug\Triangle_Vorms.Properties.Resources.resources
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\obj\Debug\Triangle_Vorms.csproj.GenerateResource.cache
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\obj\Debug\Triangle_Vorms.csproj.CoreCompileInputs.cache
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\obj\Debug\Triangle_Vorms.exe
+C:\Users\Speedman\source\repos\Triangle_Vorms\Triangle_Vorms\obj\Debug\Triangle_Vorms.pdb
