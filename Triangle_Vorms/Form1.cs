@@ -41,7 +41,7 @@ namespace Triangle_Vorms
                 listView1.Items[2].SubItems.Add(triangle.outputC());
                 listView1.Items[3].SubItems.Add(Convert.ToString(triangle.Perimetr()));
                 listView1.Items[4].SubItems.Add(Convert.ToString(triangle.Surface()));
-                if (triangle.ExistTriangle) { listView1.Items[5].SubItems.Add("Существует"); }
+                if (triangle.ExistTriangl) { listView1.Items[5].SubItems.Add("Существует"); }
                 else listView1.Items[5].SubItems.Add("Не существует");
             
         }

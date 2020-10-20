@@ -18,3 +18,4 @@ C:\Users\opilane\Source\Repos\karinahhh\triangle\Triangle_Vorms\obj\Debug\Triang
 C:\Users\opilane\Source\Repos\karinahhh\triangle\Triangle_Vorms\bin\Debug\Triangle_Vorms.exe.config
 C:\Users\opilane\Source\Repos\karinahhh\triangle\Triangle_Vorms\bin\Debug\Triangle_Vorms.exe
 C:\Users\opilane\Source\Repos\karinahhh\triangle\Triangle_Vorms\bin\Debug\Triangle_Vorms.pdb
+C:\Users\opilane\source\repos\karinahhh\triangle\Triangle_Vorms\obj\Debug\Triangle_Vorms.Form2.resources
