@@ -51,27 +51,32 @@ namespace Triangle_Vorms
 
         public double Perimetr()//сумма всех сторон типа double 
         {
-            double p = 0;
-            p = a + b + c;//вычисление 
+            double p = a + b + c;//вычисление 
             return p;//возврат
         }
 
         public double Surface()//анологично периметру
-        {
+        {/*
             double s = 0;
             double p = 0;
             p = (a + b + c) / 2;//полупериметр
             s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));//высота
             return s;
+            */
+            double p = Perimetr() / 2;
+            double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
+            return s;
+
         }
 
         public double heightt() // нахождение площади
         {
-            double p = 0;
-            double h = 0;
-            p = 1 / 2 * (a + b + c);
+            double p = Perimetr() / 2;
             h = 2 * Math.Sqrt(p * (p - a) * (p - b) * (p - c)) / a;//вычисление
             return h;//возврат
+            
+            
+            
         }
         //свойства
         public double GetSetA //свойство позволяет установить/заменить значение стороны С
@@ -94,13 +99,21 @@ namespace Triangle_Vorms
                 h = value;
             }
         }
+
+
         public bool ExistTriangl //свойсто устанавливает, существует треугольник с заданными сторонами или нет
         {
             get {
-                if ((a > b + c) && (b > a + c) && (c > a + b)) //сумма 2 сторон должна быть больше третьей стороны
+                if ((a + b > c) && (b + c > a) && (a + c > b))
+				{
                     return false;
-                else return true;
+                }
+                else
+				{
+                    return true;
+                }
             }
+            
         }
     }
 }
