@@ -12,11 +12,15 @@ namespace Triangle_Vorms
 {
 	public partial class Form2 : Form
 	{
-		Label lbl1, lbl2, lbl3;
-		TextBox txtA, txtB, txtC;
+		Label lbl1, lbl2, lbl3, lbl4;
+		TextBox txtA, txtB, txtC, txtH;
 		PictureBox pic1;
-		Button btn;
+		Button btn, btn2;
 		ListBox lbox;
+
+		Graphics gr;
+		Pen p= new Pen(Brushes.Black, 2);
+		Panel panel1;
 
 		public Form2()
 		{
@@ -24,33 +28,47 @@ namespace Triangle_Vorms
 			this.Width = 600;
 			this.Text = "Windows Form Triangle";
 
+			panel1 = new Panel();
+			panel1.Size = new Size(200, 100);
+			panel1.Location = new Point(270, 90);
+			this.Controls.Add(panel1);
+
 			lbl1 = new Label();
 			lbl1.Text = "сторона 1";
 			//lbl1.Size = new Size(20, 50);
-			lbl1.Location = new Point(30, 120);
+			lbl1.Location = new Point(30, 100);
 			this.Controls.Add(lbl1);
 
 			lbl2 = new Label();
 			lbl2.Text = "сторона 2";
-			lbl2.Location = new Point(30, 160);
+			lbl2.Location = new Point(30, 140);
 			this.Controls.Add(lbl2);
 
 			lbl3 = new Label();
 			lbl3.Text = "сторона 3";
-			lbl3.Location = new Point(30, 200);
+			lbl3.Location = new Point(30, 180);
 			this.Controls.Add(lbl3);
 
+			lbl4 = new Label();
+			lbl4.Text = "сторона H";
+			lbl4.Location = new Point(30, 220);
+			this.Controls.Add(lbl4);
+
 			txtA = new TextBox();
-			txtA.Location = new Point(130, 120);
+			txtA.Location = new Point(130, 100);
 			this.Controls.Add(txtA);
 
 			txtB = new TextBox();
-			txtB.Location = new Point(130, 160);
+			txtB.Location = new Point(130, 140);
 			this.Controls.Add(txtB);
 
 			txtC = new TextBox();
-			txtC.Location = new Point(130, 200);
+			txtC.Location = new Point(130, 180);
 			this.Controls.Add(txtC);
+
+			txtH = new TextBox();
+			txtH.Location = new Point(130, 220);
+			this.Controls.Add(txtH);
 
 			pic1 = new PictureBox();
 			pic1.Image = Image.FromFile("tri.png");
@@ -62,16 +80,52 @@ namespace Triangle_Vorms
 
 			btn = new Button();
 			btn.Size = new Size(100, 40);
-			btn.Location = new Point(260, 130);
+			btn.Location = new Point(180, 30);
 			btn.Text = "Запустить";
 			btn.Click += Btn_Click;
 			this.Controls.Add(btn);
 
+
+			//BUTTON DRAW
+			btn2 = new Button();
+			btn2.Size = new Size(100, 40);
+			btn2.Location = new Point(20, 30);
+			btn2.Text = "Draw";
+			btn2.Click += Btn2_Click;
+			this.Controls.Add(btn2);
+
+
 			lbox = new ListBox();
 			lbox.Size = new Size(200, 200);
-			lbox.Location = new Point(300, 200);
+			lbox.Location = new Point(250, 250);
 			this.Controls.Add(lbox);
 
+			gr = panel1.CreateGraphics();
+
+		}
+
+		private void Btn2_Click(object sender, EventArgs e)
+		{/*
+			//равнобедренный
+			Point p1 = new Point(5, 80);
+			Point p2 = new Point(150, 80);
+			Point p3 = new Point(75, 30);
+				
+				//равносторонний 
+				Point p1 = new Point(40, 90);
+				Point p2 = new Point(150, 90);
+				Point p3 = new Point(95, 5);
+	*/
+			//разносторонний
+			Point p1 = new Point(25, 25);
+			Point p2 = new Point(170,45);
+			Point p3 = new Point(45,90);
+
+			gr.DrawLine(p, p1, p2);
+			gr.DrawLine(p, p2, p3);
+			gr.DrawLine(p, p3, p1);
+
+			
 		}
 
 		private void Btn_Click(object sender, EventArgs e)

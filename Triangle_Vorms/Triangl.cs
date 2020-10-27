@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -100,7 +101,25 @@ namespace Triangle_Vorms
             }
         }
 
+        
+        public double Type()
+        {
+            if ((a == b) && (b == c) && (c == a)) // равносторонний
+            {
+                
 
+            }
+            else if ((a == b) || (b == c) || (c == a)) // равнобедренный
+            {
+               
+            }
+            else//разносторонний
+            {
+               
+            }
+        }
+
+        
         public bool ExistTriangl //свойсто устанавливает, существует треугольник с заданными сторонами или нет
         {
             get {
