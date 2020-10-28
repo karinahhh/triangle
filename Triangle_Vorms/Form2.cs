@@ -21,7 +21,6 @@ namespace Triangle_Vorms
 		Graphics gr;
 		Pen p= new Pen(Brushes.Black, 2);
 		Panel panel1;
-		Point p1, p2, p3;
 
 		public Form2()
 		{
@@ -71,13 +70,7 @@ namespace Triangle_Vorms
 			txtH.Location = new Point(130, 220);
 			this.Controls.Add(txtH);
 
-			pic1 = new PictureBox();
-			pic1.Image = Image.FromFile("tri.png");
-			pic1.Location = new Point(30, 250);
-			pic1.Size = new Size(200, 200);
-			pic1.SizeMode = PictureBoxSizeMode.Zoom;
-			pic1.BorderStyle = BorderStyle.FixedSingle;
-			this.Controls.Add(pic1);
+			
 
 			btn = new Button();
 			btn.Size = new Size(100, 40);
@@ -101,45 +94,15 @@ namespace Triangle_Vorms
 			lbox.Location = new Point(250, 250);
 			this.Controls.Add(lbox);
 
-			gr = panel1.CreateGraphics();
 
+			
+
+
+			gr = panel1.CreateGraphics();
 		}
 
 		private void Btn2_Click(object sender, EventArgs e)
 		{
-			if ((txtA.Text == txtB.Text) && (txtB.Text == txtC.Text) && (txtC.Text == txtA.Text)) // равносторонний
-			{
-				panel1.Refresh();
-				Point p1 = new Point(40, 90);
-				Point p2 = new Point(150, 90);
-				Point p3 = new Point(95, 5);
-				gr.DrawLine(p, p1, p2);
-				gr.DrawLine(p, p2, p3);
-				gr.DrawLine(p, p3, p1);
-			}
-			else if ((txtA.Text == txtB.Text) || (txtB.Text == txtC.Text) || (txtC.Text == txtA.Text)) // равнобедренный
-			{
-				panel1.Refresh();
-				Point p1 = new Point(5, 80);
-				Point p2 = new Point(150, 80);
-				Point p3 = new Point(75, 30);
-				gr.DrawLine(p, p1, p2);
-				gr.DrawLine(p, p2, p3);
-				gr.DrawLine(p, p3, p1);
-			}
-			else//разносторонний
-			{
-				panel1.Refresh();
-				Point p1 = new Point(25, 25);
-				Point p2 = new Point(170, 45);
-				Point p3 = new Point(45, 90);
-				gr.DrawLine(p, p1, p2);
-				gr.DrawLine(p, p2, p3);
-				gr.DrawLine(p, p3, p1);
-			}
-			
-
-
 			btn3 = new Button();
 			btn3.Size = new Size(80, 40);
 			btn3.Location = new Point(250, 100);
@@ -160,7 +123,6 @@ namespace Triangle_Vorms
 			btn5.Text = "разносторонний";
 			btn5.Click += Btn5_Click;
 			this.Controls.Add(btn5);
-
 		}
 
 		private void Btn5_Click(object sender, EventArgs e)
@@ -228,7 +190,69 @@ namespace Triangle_Vorms
 				lbox.Items.Add("Высота : " + triang.heightt());
 			}
 			
-		
+			
+
+			if ((txtA.Text == txtB.Text) && (txtB.Text == txtC.Text) && (txtC.Text == txtA.Text)) // равносторонний
+			{
+				panel1.Refresh();
+				
+
+				Point p1 = new Point(40, 90);
+				Point p2 = new Point(150, 90);
+				Point p3 = new Point(95, 5);
+				gr.DrawLine(p, p1, p2);
+				gr.DrawLine(p, p2, p3);
+				gr.DrawLine(p, p3, p1);
+
+				pic1 = new PictureBox();
+				pic1.Image = Image.FromFile("ravn.png");
+				pic1.Location = new Point(30, 250);
+				pic1.Size = new Size(200, 200);
+				pic1.SizeMode = PictureBoxSizeMode.Zoom;
+				pic1.BorderStyle = BorderStyle.FixedSingle;
+				this.Controls.Add(pic1);
+			}
+			else if ((txtA.Text == txtB.Text) || (txtB.Text == txtC.Text) || (txtC.Text == txtA.Text)) // равнобедренный
+			{
+				panel1.Refresh();
+				
+
+				Point p1 = new Point(5, 80);
+				Point p2 = new Point(150, 80);
+				Point p3 = new Point(75, 30);
+				gr.DrawLine(p, p1, p2);
+				gr.DrawLine(p, p2, p3);
+				gr.DrawLine(p, p3, p1);
+
+				pic1 = new PictureBox();
+				pic1.Image = Image.FromFile("tri.png");
+				pic1.Location = new Point(30, 250);
+				pic1.Size = new Size(200, 200);
+				pic1.SizeMode = PictureBoxSizeMode.Zoom;
+				pic1.BorderStyle = BorderStyle.FixedSingle;
+				this.Controls.Add(pic1);
+			}
+			else//разносторонний
+			{
+				panel1.Refresh();
+				pic1.Refresh();
+				Point p1 = new Point(25, 25);
+				Point p2 = new Point(170, 45);
+				Point p3 = new Point(45, 90);
+				gr.DrawLine(p, p1, p2);
+				gr.DrawLine(p, p2, p3);
+				gr.DrawLine(p, p3, p1);
+
+				pic1 = new PictureBox();
+				pic1.Image = Image.FromFile("razn.jpg");
+				pic1.Location = new Point(30, 250);
+				pic1.Size = new Size(200, 200);
+				pic1.SizeMode = PictureBoxSizeMode.Zoom;
+				pic1.BorderStyle = BorderStyle.FixedSingle;
+				this.Controls.Add(pic1);
+			}
+
+			
 		}
 	}
 }

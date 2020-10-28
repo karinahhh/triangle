@@ -110,6 +110,9 @@ namespace Triangle_Vorms
             }
         }
 
+
+
+
         /*
         public System.Drawing.Graphics Type()
         {
