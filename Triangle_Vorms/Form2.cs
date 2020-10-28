@@ -205,7 +205,7 @@ namespace Triangle_Vorms
 				gr.DrawLine(p, p3, p1);
 
 				pic1 = new PictureBox();
-				pic1.Image = Image.FromFile("ravn.png");
+				pic1.Image = Image.FromFile("tri.png");
 				pic1.Location = new Point(30, 250);
 				pic1.Size = new Size(200, 200);
 				pic1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -216,7 +216,6 @@ namespace Triangle_Vorms
 			{
 				panel1.Refresh();
 				
-
 				Point p1 = new Point(5, 80);
 				Point p2 = new Point(150, 80);
 				Point p3 = new Point(75, 30);
@@ -225,7 +224,7 @@ namespace Triangle_Vorms
 				gr.DrawLine(p, p3, p1);
 
 				pic1 = new PictureBox();
-				pic1.Image = Image.FromFile("tri.png");
+				pic1.Image = Image.FromFile("ravn.png");
 				pic1.Location = new Point(30, 250);
 				pic1.Size = new Size(200, 200);
 				pic1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -235,7 +234,7 @@ namespace Triangle_Vorms
 			else//разносторонний
 			{
 				panel1.Refresh();
-				pic1.Refresh();
+				
 				Point p1 = new Point(25, 25);
 				Point p2 = new Point(170, 45);
 				Point p3 = new Point(45, 90);
