@@ -57,17 +57,26 @@ namespace Triangle_Vorms
         }
 
         public double Surface()//анологично периметру
-        {/*
+        {
             double s = 0;
             double p = 0;
             p = (a + b + c) / 2;//полупериметр
             s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));//высота
             return s;
-            */
-            double p = Perimetr() / 2;
-            double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
-            return s;
-
+                     
+/*
+			if (h==0)
+			{
+                double p = Perimetr() / 2;
+                double s = Math.Sqrt((p * (p - a) * (p - b) * (p - c)));
+                return s;
+            }
+			else if (h>0)
+			{
+                double s = (a * h) / 2;
+                return s;
+			}
+*/
         }
 
         public double heightt() // нахождение площади
@@ -101,23 +110,47 @@ namespace Triangle_Vorms
             }
         }
 
-        
-        public double Type()
+        /*
+        public System.Drawing.Graphics Type()
         {
+            
+            
             if ((a == b) && (b == c) && (c == a)) // равносторонний
             {
-                
-
+                Graphics gr;
+                Pen p = new Pen(Brushes.Black, 2);
+                Point p1 = new Point(40, 90);
+                Point p2 = new Point(150, 90);
+                Point p3 = new Point(95, 5);
+				//Graphics gr = new Graphics();
+				gr.DrawLine(p, p1, p2);
+                gr.DrawLine(p, p2, p3);
+                gr.DrawLine(p, p3, p1);
             }
             else if ((a == b) || (b == c) || (c == a)) // равнобедренный
             {
-               
+                Graphics gr;
+                Pen p = new Pen(Brushes.Black, 2);
+                Point p1 = new Point(5, 80);
+                Point p2 = new Point(150, 80);
+                Point p3 = new Point(75, 30);
+                gr.DrawLine(p, p1, p2);
+                gr.DrawLine(p, p2, p3);
+                gr.DrawLine(p, p3, p1);
+
             }
             else//разносторонний
             {
-               
+                Graphics gr;
+                Pen p = new Pen(Brushes.Black, 2);
+                Point p1 = new Point(25, 25);
+                Point p2 = new Point(170, 45);
+                Point p3 = new Point(45, 90);
+                gr.DrawLine(p, p1, p2);
+                gr.DrawLine(p, p2, p3);
+                gr.DrawLine(p, p3, p1);
             }
-        }
+        }*/
 
         
         public bool ExistTriangl //свойсто устанавливает, существует треугольник с заданными сторонами или нет

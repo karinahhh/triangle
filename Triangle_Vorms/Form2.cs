@@ -15,12 +15,13 @@ namespace Triangle_Vorms
 		Label lbl1, lbl2, lbl3, lbl4;
 		TextBox txtA, txtB, txtC, txtH;
 		PictureBox pic1;
-		Button btn, btn2;
+		Button btn, btn2, btn3, btn4, btn5;
 		ListBox lbox;
 
 		Graphics gr;
 		Pen p= new Pen(Brushes.Black, 2);
 		Panel panel1;
+		Point p1, p2, p3;
 
 		public Form2()
 		{
@@ -30,7 +31,7 @@ namespace Triangle_Vorms
 
 			panel1 = new Panel();
 			panel1.Size = new Size(200, 100);
-			panel1.Location = new Point(270, 90);
+			panel1.Location = new Point(400, 90);
 			this.Controls.Add(panel1);
 
 			lbl1 = new Label();
@@ -105,27 +106,95 @@ namespace Triangle_Vorms
 		}
 
 		private void Btn2_Click(object sender, EventArgs e)
-		{/*
-			//равнобедренный
-			Point p1 = new Point(5, 80);
-			Point p2 = new Point(150, 80);
-			Point p3 = new Point(75, 30);
-				
-				//равносторонний 
+		{
+			if ((txtA.Text == txtB.Text) && (txtB.Text == txtC.Text) && (txtC.Text == txtA.Text)) // равносторонний
+			{
+				panel1.Refresh();
 				Point p1 = new Point(40, 90);
 				Point p2 = new Point(150, 90);
 				Point p3 = new Point(95, 5);
-	*/
-			//разносторонний
-			Point p1 = new Point(25, 25);
-			Point p2 = new Point(170,45);
-			Point p3 = new Point(45,90);
+				gr.DrawLine(p, p1, p2);
+				gr.DrawLine(p, p2, p3);
+				gr.DrawLine(p, p3, p1);
+			}
+			else if ((txtA.Text == txtB.Text) || (txtB.Text == txtC.Text) || (txtC.Text == txtA.Text)) // равнобедренный
+			{
+				panel1.Refresh();
+				Point p1 = new Point(5, 80);
+				Point p2 = new Point(150, 80);
+				Point p3 = new Point(75, 30);
+				gr.DrawLine(p, p1, p2);
+				gr.DrawLine(p, p2, p3);
+				gr.DrawLine(p, p3, p1);
+			}
+			else//разносторонний
+			{
+				panel1.Refresh();
+				Point p1 = new Point(25, 25);
+				Point p2 = new Point(170, 45);
+				Point p3 = new Point(45, 90);
+				gr.DrawLine(p, p1, p2);
+				gr.DrawLine(p, p2, p3);
+				gr.DrawLine(p, p3, p1);
+			}
+			
 
+
+			btn3 = new Button();
+			btn3.Size = new Size(80, 40);
+			btn3.Location = new Point(250, 100);
+			btn3.Text = "равносторонний";
+			btn3.Click += Btn3_Click;
+			this.Controls.Add(btn3);
+
+			btn4 = new Button();
+			btn4.Size = new Size(80, 40);
+			btn4.Location = new Point(250, 150);
+			btn4.Text = "равнобедренный";
+			btn4.Click += Btn4_Click;
+			this.Controls.Add(btn4);
+
+			btn5 = new Button();
+			btn5.Size = new Size(80, 40);
+			btn5.Location = new Point(250, 200);
+			btn5.Text = "разносторонний";
+			btn5.Click += Btn5_Click;
+			this.Controls.Add(btn5);
+
+		}
+
+		private void Btn5_Click(object sender, EventArgs e)
+		{
+			panel1.Refresh();
+			Point p1 = new Point(25, 25);
+			Point p2 = new Point(170, 45);
+			Point p3 = new Point(45, 90);
 			gr.DrawLine(p, p1, p2);
 			gr.DrawLine(p, p2, p3);
 			gr.DrawLine(p, p3, p1);
-
 			
+		}
+
+		private void Btn4_Click(object sender, EventArgs e)
+		{
+			panel1.Refresh();
+			Point p1 = new Point(5, 80);
+			Point p2 = new Point(150, 80);
+			Point p3 = new Point(75, 30);
+			gr.DrawLine(p, p1, p2);
+			gr.DrawLine(p, p2, p3);
+			gr.DrawLine(p, p3, p1);
+		}
+
+		private void Btn3_Click(object sender, EventArgs e)
+		{
+			panel1.Refresh();
+			Point p1 = new Point(40, 90);
+			Point p2 = new Point(150, 90);
+			Point p3 = new Point(95, 5);
+			gr.DrawLine(p, p1, p2);
+			gr.DrawLine(p, p2, p3);
+			gr.DrawLine(p, p3, p1);
 		}
 
 		private void Btn_Click(object sender, EventArgs e)
